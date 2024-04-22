@@ -4,5 +4,6 @@ $base_color: #1D1427;
 
 $main_text: #FFFFFF;
 
-$sub_text: #8e8a9a
+$sub_text: #8e8a9a;
 
+$border_color: color-mix(in hsl, $sub_text 40%, rgba(0, 0, 0, 0) 60%);

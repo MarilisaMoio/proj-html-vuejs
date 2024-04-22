@@ -55,14 +55,14 @@
         background-color: $base_color;
         .top-header{
             color: $sub_text;
-            border-bottom: 0.5px solid color-mix(in hsl, $sub_text 40%, rgba(0, 0, 0, 0) 60%);
+            border-bottom: 0.5px solid $border_color;
             .container{
                 justify-content: space-between;
                 padding: 12px;
                 ul{
                     > * + * {
                     padding-left: 10px;
-                    border-left: 0.5px solid $sub_text
+                    border-left: 0.5px solid $border_color
                     }
                     > * {
                         padding-right: 10px;
