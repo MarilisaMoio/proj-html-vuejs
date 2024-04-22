@@ -27,3 +27,6 @@ dist-ssr
 src/assets/img/*
 !src/assets/img/favicon.png
 !src/assets/img/logo.png
+!src/assets/img/body-bg.jpg
+!src/assets/img/parallax.jpg
+

@@ -27,8 +27,22 @@ body{
 .container{
     max-width: 1140px;
     margin: 0 auto;
+    height: 100%;
 }
 
 .active{
     color: $primary_color;
+}
+
+.badge{
+    background-color: $primary_color;
+    color: black;
+    padding: 3px 10px;
+    width: fit-content;
+    transform: skew(-20deg);
+    > .badge-content {
+        transform: skew(20deg);
+        font-weight: 500;
+        font-size: 1.4rem;
+    }
 }
