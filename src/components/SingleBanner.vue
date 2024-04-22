@@ -26,7 +26,6 @@
     .single-banner{
         position: relative;
         width: calc(100% / 2 - 5px);
-        height: 250px;
         > img{
             width: 100%;
         }
