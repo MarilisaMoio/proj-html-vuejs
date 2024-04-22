@@ -26,3 +26,4 @@ dist-ssr
 # Personal
 src/assets/img/*
 !src/assets/img/favicon.png
+!src/assets/img/logo.png
