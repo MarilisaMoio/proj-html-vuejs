@@ -5,7 +5,7 @@
 </script>
 
 <template>
-    <div class="hero">
+    <section class="hero">
         <div class="container">
             <div class="hero-content">
                 <div class="badge">
@@ -14,9 +14,8 @@
                 <h2>Resident Evil 3 Remake</h2>
                 <button type="button">Shop Now</button>
             </div>
-            
         </div>
-    </div>
+    </section>
 </template>
 
 <style scoped lang="scss">
