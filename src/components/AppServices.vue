@@ -60,6 +60,7 @@
             font-weight: 500;
         }
         .card-subtext{
+            margin-top: 4px;
             color: $sub_text;
             font-size: 0.8rem;
         }
