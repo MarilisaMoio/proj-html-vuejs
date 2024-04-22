@@ -12,11 +12,17 @@
 
 <template>
     <section class="banner">
-        <SingleBanner :content="bannerOne"></SingleBanner>
-        <SingleBanner :content="bannerTwo"></SingleBanner>
+        <div class="container">
+            <SingleBanner :content="bannerOne"></SingleBanner>
+            <SingleBanner :content="bannerTwo"></SingleBanner>
+        </div>
     </section>
 </template>
 
 <style scoped lang="scss">
+    .container{
+        display: flex;
+        justify-content: space-between;
+    }
 
 </style>

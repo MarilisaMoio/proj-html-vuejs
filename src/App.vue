@@ -26,6 +26,8 @@
         <AppHero></AppHero>
         <AppServices></AppServices>
         <BannerSections :bannerOne="store.banners[0]" :bannerTwo="store.banners[1]"></BannerSections>
+        <!-- LOC here -->
+        <BannerSections :bannerOne="store.banners[2]" :bannerTwo="store.banners[3]"></BannerSections>
     </main>
 </template>
 
