@@ -1,5 +1,6 @@
 <script>
     import ItemCarousel from "./ItemCarousel.vue"
+    import { store } from "../store.js"
 
     export default{
         name: 'AppProducts',
@@ -8,8 +9,24 @@
         },
         data(){
             return{
-                isActive: "feat"
+                store,
+                isActive: "feat",
+                itemPrinted: []
             }
+        },
+        methods: {
+            shownItems(){
+                this.itemPrinted = [];
+                store.items.forEach((item) => {
+                    if (item.status === this.isActive){
+                        this.itemPrinted.push(item)
+                    }
+                })
+                console.log(this.itemPrinted)
+            }
+        },
+        mounted(){
+            this.shownItems()
         }
     }
 </script>
@@ -18,11 +35,11 @@
     <div class="container">
         <h3 class="sec-title">Our Products</h3>
         <div class="btn-group">
-            <button type="button" :class="{ 'active-btn': isActive === 'feat' }" @click="isActive = 'feat'">Featured</button>
-            <button type="button" :class="{ 'active-btn': isActive === 'newarr' }" @click="isActive = 'newarr'">New Arrivals</button>
-            <button type="button" :class="{ 'active-btn': isActive === 'bestsell' }" @click="isActive = 'bestsell'">Best Sellers</button>
+            <button type="button" :class="{ 'active-btn': isActive === 'feat' }" @click="isActive = 'feat', shownItems(), store.movement = 0">Featured</button>
+            <button type="button" :class="{ 'active-btn': isActive === 'newarr' }" @click="isActive = 'newarr', shownItems(), store.movement = 0">New Arrivals</button>
+            <button type="button" :class="{ 'active-btn': isActive === 'bestsell' }" @click="isActive = 'bestsell', shownItems(), store.movement = 0">Best Sellers</button>
         </div>
-        <ItemCarousel :isActive="isActive"></ItemCarousel>
+        <ItemCarousel :itemPrinted="itemPrinted"></ItemCarousel>
     </div>
 </template>
 
