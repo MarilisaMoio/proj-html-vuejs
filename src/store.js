@@ -32,27 +32,123 @@ export const store = reactive({
             price: 180,
             status: "feat"
         },{
-            name: "Joystick camo",
-            rating: 4,
-            img: "04.jpg",
-            discounted: 44,
-            price: 180,
-            status: "ehy"
+            name: "Joystick xBox",
+            rating: 3,
+            img: "01.jpg",
+            discounted: null,
+            price: 35,
+            status: "newarr"
         },{
-            name: "Joystick camo",
+            name: "Headphones basic",
             rating: 4,
-            img: "04.jpg",
-            discounted: 44,
-            price: 180,
-            status: "ehy"
+            img: "02.jpg",
+            discounted: null,
+            price: 50,
+            status: "feat"
         },{
-            name: "Joystick camo",
-            rating: 4,
-            img: "04.jpg",
-            discounted: 44,
-            price: 180,
+            name: "Mousepad ergonomico",
+            rating: 3,
+            img: "03.jpg",
+            discounted: null,
+            price: 25,
             status: "feat"
         },
-
+        {
+            name: "Oculus Rift",
+            rating: 5,
+            img: "05.jpg",
+            discounted: null,
+            price: 190,
+            status: "bestsell"
+        },
+        {
+            name: "Headphones Sony",
+            rating: 4,
+            img: "06.jpg",
+            discounted: null,
+            price: 140,
+            status: "bestsell"
+        },
+        {
+            name: "Joystick PS4 Flames",
+            rating: 2,
+            img: "07.jpg",
+            discounted: 25,
+            price: 45,
+            status: "feat"
+        },
+        {
+            name: "Joystick PS4 Zebra",
+            rating: 1,
+            img: "08.jpg",
+            discounted: 30,
+            price: 45,
+            status: "feat"
+        },
+        {
+            name: "AverMedia",
+            rating: 5,
+            img: "09.jpg",
+            discounted: null,
+            price: 140,
+            status: "bestsell"
+        },
+        {
+            name: "Joystick Retro",
+            rating: 5,
+            img: "10.jpg",
+            discounted: null,
+            price: 60,
+            status: "newarr"
+        },
+        {
+            name: "Joystick base",
+            rating: 4,
+            img: "11.jpg",
+            discounted: null,
+            price: 35,
+            status: "bestsell"
+        },
+        {
+            name: "Sony MDR 1ABT",
+            rating: 5,
+            img: "12.jpg",
+            discounted: null,
+            price: 95,
+            status: "feat"
+        },
+        {
+            name: "Joystick xBox Camo",
+            rating: 3,
+            img: "13.jpg",
+            discounted: null,
+            price: 60,
+            status: "newarr"
+        },
+        {
+            name: "Headphones Beats",
+            rating: 4,
+            img: "14.jpg",
+            discounted: 10,
+            price: 80,
+            status: "bestsell"
+        },
+        {
+            name: "GTA V",
+            rating: 4,
+            img: "17.jpg",
+            discounted: null,
+            price: 50,
+            status: "feat"
+        },
+        {
+            name: "Mouse Razor",
+            rating: 5,
+            img: "18.jpg",
+            discounted: null,
+            price: 60,
+            status: "newarr"
+        },
     ]
+    
 })
