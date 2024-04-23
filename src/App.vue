@@ -4,13 +4,15 @@
     import AppServices from "./components/AppServices.vue"
     import BannerSections from "./components/BannerSections.vue"
     import { store } from "./store.js";
+    import AppProducts from "./components/AppProducts.vue"
 
     export default{
         components: {
             AppHeader,
             AppHero,
             AppServices,
-            BannerSections
+            BannerSections,
+            AppProducts
         },
         data(){
             return {
@@ -26,6 +28,7 @@
         <AppHero></AppHero>
         <AppServices></AppServices>
         <BannerSections :bannerOne="store.banners[0]" :bannerTwo="store.banners[1]"></BannerSections>
+        <AppProducts></AppProducts>
         <!-- LOC here -->
         <BannerSections :bannerOne="store.banners[2]" :bannerTwo="store.banners[3]"></BannerSections>
     </main>

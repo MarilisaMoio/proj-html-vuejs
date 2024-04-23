@@ -22,5 +22,37 @@ export const store = reactive({
             title: "World Of Tanks New Game",
             img: "04"
         }
+    ],
+    items: [
+        {
+            name: "Joystick camo",
+            rating: 4,
+            img: "04.jpg",
+            discounted: 44,
+            price: 180,
+            status: "feat"
+        },{
+            name: "Joystick camo",
+            rating: 4,
+            img: "04.jpg",
+            discounted: 44,
+            price: 180,
+            status: "ehy"
+        },{
+            name: "Joystick camo",
+            rating: 4,
+            img: "04.jpg",
+            discounted: 44,
+            price: 180,
+            status: "ehy"
+        },{
+            name: "Joystick camo",
+            rating: 4,
+            img: "04.jpg",
+            discounted: 44,
+            price: 180,
+            status: "feat"
+        },
+
     ]
 })
