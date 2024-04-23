@@ -1,8 +1,9 @@
 <script>
     import { store } from "../store.js";
     import ItemCard from "./ItemCard.vue"
+
     export default{
-        name: 'ItemCarousel',
+        name: 'DealsCarousel',
         props: ["itemPrinted"],
         components: {
             ItemCard,
@@ -10,20 +11,21 @@
         data(){
             return{
                 store,
+                movement: 0,
+                lastVisible: 4
             }
         },
         methods: {
             moveFoward(){
-                if (this.itemPrinted.length > store.lastVisible){
-                    console.log("ehiii")
-                    ++store.lastVisible;
-                    store.movement += -285
+                if (this.itemPrinted.length > this.lastVisible){
+                    ++this.lastVisible;
+                    this.movement += -285
                 }
             },
             moveBackward(){
-                if (store.lastVisible > 4){
-                    --store.lastVisible;
-                    store.movement += 285
+                if (this.lastVisible > 4){
+                    --this.lastVisible;
+                    this.movement += 285
                 }
             },
         }
@@ -35,7 +37,7 @@
         <!-- icon here-->
         <div class="icon-arrows arrow-previous" @click="moveBackward()" v-if="itemPrinted.length > 4"></div>
         <div class="inner-carousel">
-            <div class="cards-wrapper" :style="{left: store.movement + 'px'}">
+            <div class="cards-wrapper" :style="{left: this.movement + 'px'}">
                 <template v-for="item in itemPrinted">
                     <ItemCard :item="item"></ItemCard>
                 </template>

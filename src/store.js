@@ -1,6 +1,11 @@
 import { reactive } from "vue";
 
 export const store = reactive({
+    //header counters
+    inCart: 0,
+    totalPrice: 0,
+    wishlist: 0,
+    //object arrays
     banners: [
         {
             badge: "Most Popular",
@@ -150,8 +155,7 @@ export const store = reactive({
             status: "newarr"
         },
     ],
-    inCart: 0,
-    totalPrice: 0,
-    wishlist: 0,
-    
+    //carousel counters
+    movement: 0,
+    lastVisible: 4,
 })

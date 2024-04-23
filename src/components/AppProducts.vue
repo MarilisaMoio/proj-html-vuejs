@@ -16,6 +16,7 @@
         },
         methods: {
             shownItems(){
+                console.log("ehi!")
                 this.itemPrinted = [];
                 store.items.forEach((item) => {
                     if (item.status === this.isActive){
@@ -36,9 +37,9 @@
         <div class="container">
             <h3 class="sec-title">Our Products</h3>
             <div class="btn-group">
-                <button type="button" :class="{ 'active-btn': isActive === 'feat' }" @click="isActive = 'feat', shownItems(), store.movement = 0">Featured</button>
-                <button type="button" :class="{ 'active-btn': isActive === 'newarr' }" @click="isActive = 'newarr', shownItems(), store.movement = 0">New Arrivals</button>
-                <button type="button" :class="{ 'active-btn': isActive === 'bestsell' }" @click="isActive = 'bestsell', shownItems(), store.movement = 0">Best Sellers</button>
+                <button type="button" :class="{ 'active-btn': isActive === 'feat' }" @click="isActive = 'feat', shownItems(), store.movement = 0, store.lastVisible = 4">Featured</button>
+                <button type="button" :class="{ 'active-btn': isActive === 'newarr' }" @click="isActive = 'newarr', shownItems(), store.movement = 0, store.lastVisible = 4">New Arrivals</button>
+                <button type="button" :class="{ 'active-btn': isActive === 'bestsell' }" @click="isActive = 'bestsell', shownItems(), store.movement = 0, store.lastVisible = 4">Best Sellers</button>
             </div>
             <ItemCarousel :itemPrinted="itemPrinted"></ItemCarousel>
         </div>

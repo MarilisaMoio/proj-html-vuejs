@@ -1,11 +1,11 @@
 <script>
-    import ItemCarousel from "./ItemCarousel.vue"
+    import DealsCarousel from "./DealsCarousel.vue"
     import { store } from "../store.js"
 
     export default{
         name: 'AppDeals',
         components: {
-            ItemCarousel
+            DealsCarousel
         },
         data(){
             return{
@@ -59,7 +59,7 @@
                 <div class="minutes">{{ minutes }} {{ minutes > 1 ? "minutes" : "minute" }}</div>
                 <div class="seconds">{{ seconds }} {{ seconds > 1 ? "seconds" : "second" }}</div>
             </div>
-            <ItemCarousel :itemPrinted="itemPrinted"></ItemCarousel>
+            <DealsCarousel :itemPrinted="itemPrinted"></DealsCarousel>
         </div>
     </section>
 </template>

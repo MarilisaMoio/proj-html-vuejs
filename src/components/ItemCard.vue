@@ -153,7 +153,7 @@
         bottom: 0;
         transform: translatey(100%);
         left: 0;
-        .content-wrapper:hover & {
+        .item-card:hover & {
             transform: translateY(0);
         }
     }
