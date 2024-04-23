@@ -20,12 +20,18 @@
                 if (this.itemPrinted.length > this.lastVisible){
                     ++this.lastVisible;
                     this.movement += -285
+                } else {
+                    this.lastVisible = 4;
+                    this.movement = 0;
                 }
             },
             moveBackward(){
                 if (this.lastVisible > 4){
                     --this.lastVisible;
                     this.movement += 285
+                } else {
+                    this.lastVisible = this.itemPrinted.length;
+                    this.movement = -285 * (this.itemPrinted.length - 4);
                 }
             },
         }

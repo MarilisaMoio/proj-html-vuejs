@@ -18,12 +18,18 @@
                     console.log("ehiii")
                     ++store.lastVisible;
                     store.movement += -285
+                } else {
+                    store.lastVisible = 4;
+                    store.movement = 0;
                 }
             },
             moveBackward(){
                 if (store.lastVisible > 4){
                     --store.lastVisible;
                     store.movement += 285
+                } else {
+                    store.lastVisible = this.itemPrinted.length;
+                    store.movement = -285 * (this.itemPrinted.length - 4);
                 }
             },
         }
