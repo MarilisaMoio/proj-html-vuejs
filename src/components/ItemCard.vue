@@ -22,8 +22,8 @@
                 <i class="fa-solid fa-star empty" v-for="n in 5 - item.rating"></i>
             </div>
             <div class="item-name">{{ item.name }}</div>
-            <div class="item-price" :class="{ discount: item.discounted }" >€{{ item.price }}</div>
-            <div class="discount-price" v-if="item.discounted">€{{ Math.round(item.price / 100 * (100 - item.discounted)) }}</div>
+            <span class="item-price" :class="{ discount: item.discounted }" >€{{ item.price }}</span>
+            <span class="discount-price" v-if="item.discounted">€{{ Math.round(item.price / 100 * (100 - item.discounted)) }}</span>
         </div>
     </div>
 
@@ -31,6 +31,10 @@
 
 <style scoped lang="scss">
     @use '../style/partials/variables' as *;
+    
+    .content-wrapper{
+        background-color: $base_color;
+    }
 
     .item-card{
         position: relative;
@@ -49,12 +53,19 @@
 
     .fa-star{
         text-shadow: 0px 0px 4px black;
+        font-size: 0.7rem;
         &.full{
             color: orange;
         }
         &.empty{
             color: gray;
         }
+    }
+
+    .item-name{
+        font-weight: 400;
+        margin: 10px 0;
+        margin-bottom: 16px;
     }
 
     .item-card{
@@ -65,6 +76,11 @@
         }
     }
 
+    [class*=price]{
+        color: $primary_color;
+        font-size: 1rem;
+    }
+
     .content-wrapper{
         padding: 14px 16px;
     }
@@ -72,5 +88,6 @@
     .discount{
         color: $sub_text;
         text-decoration: line-through;
+        margin-right: 6px
     }
 </style>
