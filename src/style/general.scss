@@ -52,12 +52,12 @@ h3.sec-title{
     font-weight: 500;
     position: relative;
     width: fit-content;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     margin: 0 auto;
     &::after{
         content: "";
-        width: 30px;
-        height: 2px;
+        width: 45px;
+        height: 1px;
         background: $primary_color;
         position: absolute;
         bottom: 0;
