@@ -29,8 +29,8 @@
     .hero{
         height: 750px;
         overflow: hidden;
-        background-image: url(../assets/img/parallax.jpg); // ! PLACEHOLDER IMG - ASK FOR THE CORRECT ONE
-        background-position: center;
+        background-image: url(https://image.api.playstation.com/vulcan/ap/rnd/202206/0307/wIVJREWyBg8SyXvXYuBPG6je.png?w=1920);
+        background-position: center -40px;
     }
 
     button{
