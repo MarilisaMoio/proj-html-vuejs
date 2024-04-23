@@ -7,6 +7,7 @@
     import AppProducts from "./components/AppProducts.vue"
     import AppDeals from "./components/AppDeals.vue"
     import AppSpecial from "./components/AppSpecial.vue"
+    import AppQuotes from "./components/AppQuotes.vue"
 
     export default{
         components: {
@@ -16,7 +17,8 @@
             BannerSections,
             AppProducts,
             AppDeals,
-            AppSpecial
+            AppSpecial,
+            AppQuotes
         },
         data(){
             return {
@@ -36,6 +38,7 @@
         <AppProducts></AppProducts>
         <BannerSections :bannerOne="store.banners[2]" :bannerTwo="store.banners[3]"></BannerSections>
         <AppDeals></AppDeals>
+        <AppQuotes></AppQuotes>
     </main>
 </template>
 
