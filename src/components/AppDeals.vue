@@ -12,8 +12,8 @@
                 store,
                 itemPrinted: [],
                 seconds: 60,
-                minutes: 60,
-                hours: 24,
+                minutes: 59,
+                hours: 23,
                 days: 1,
             }
         },
@@ -35,8 +35,8 @@
                         this.minutes -= 1;
                     }
                     if(this.minutes === 0){
-                        this.minutes = 60;
-                        this.days -= 1;
+                        this.minutes = 59;
+                        this.hours -= 1;
                     }
                 }, 1000)
 
