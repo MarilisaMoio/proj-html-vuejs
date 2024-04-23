@@ -5,6 +5,7 @@
     import BannerSections from "./components/BannerSections.vue"
     import { store } from "./store.js";
     import AppProducts from "./components/AppProducts.vue"
+    import AppDeals from "./components/AppDeals.vue"
 
     export default{
         components: {
@@ -12,7 +13,8 @@
             AppHero,
             AppServices,
             BannerSections,
-            AppProducts
+            AppProducts,
+            AppDeals
         },
         data(){
             return {
@@ -29,8 +31,8 @@
         <AppServices></AppServices>
         <BannerSections :bannerOne="store.banners[0]" :bannerTwo="store.banners[1]"></BannerSections>
         <AppProducts></AppProducts>
-        <!-- LOC here -->
         <BannerSections :bannerOne="store.banners[2]" :bannerTwo="store.banners[3]"></BannerSections>
+        <AppDeals></AppDeals>
     </main>
 </template>
 

@@ -89,7 +89,7 @@ export const store = reactive({
             name: "AverMedia",
             rating: 5,
             img: "09.jpg",
-            discounted: null,
+            discounted: 20,
             price: 140,
             status: "bestsell"
         },
@@ -105,7 +105,7 @@ export const store = reactive({
             name: "Joystick base",
             rating: 4,
             img: "11.jpg",
-            discounted: null,
+            discounted: 15,
             price: 35,
             status: "bestsell"
         },
