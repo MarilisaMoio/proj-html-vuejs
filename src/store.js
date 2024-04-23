@@ -149,6 +149,9 @@ export const store = reactive({
             price: 60,
             status: "newarr"
         },
-    ]
+    ],
+    inCart: 0,
+    totalPrice: 0,
+    wishlist: 0,
     
 })

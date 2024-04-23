@@ -1,10 +1,34 @@
 <script>
+    import { store } from "../store.js";
+
     export default{
         name: 'ItemCard',
         props: ["item"],
+        data() {
+            return {
+            store,
+            isLiked: false,
+            isInCart: false,
+            }
+        },
         methods: {
             getImageUrl(name) {
                 return new URL(`../assets/img/${name}`, import.meta.url).href
+            },
+            likeBtn(){
+                this.isLiked = !this.isLiked;
+                this.isLiked ? store.wishlist += 1 : store.wishlist -= 1;
+                
+            },
+            cartBtn(){
+                this.isInCart = !this.isInCart
+                if (this.isInCart === true){
+                    store.inCart += 1;
+                    this.item.discounted ? store.totalPrice += Math.round(this.item.price / 100 * (100 - this.item.discounted)) : store.totalPrice += this.item.price;
+                } else {
+                    store.inCart -= 1;
+                    this.item.discounted ? store.totalPrice -= Math.round(this.item.price / 100 * (100 - this.item.discounted)) : store.totalPrice -= this.item.price;
+                }
             }
         }
     }
@@ -24,6 +48,20 @@
             <div class="item-name">{{ item.name }}</div>
             <span class="item-price" :class="{ discount: item.discounted }" >€{{ item.price }}</span>
             <span class="discount-price" v-if="item.discounted">€{{ Math.round(item.price / 100 * (100 - item.discounted)) }}</span>
+            <div class="hover-icons">
+                <div class="icon-border" @click="cartBtn()">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+                <div class="icon-border" @click="likeBtn()">
+                    <i class="fa-solid fa-heart" :class="{ liked: isLiked }"></i>
+                </div>
+                <div class="icon-border">
+                    <i class="fa-solid fa-maximize"></i>
+                </div>
+                <div class="icon-border">
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -34,6 +72,7 @@
     
     .content-wrapper{
         background-color: $base_color;
+        position: relative;
     }
 
     .item-card{
@@ -89,5 +128,37 @@
         color: $sub_text;
         text-decoration: line-through;
         margin-right: 6px
+    }
+
+    .icon-border{
+        display: inline-block;
+        width: 25%;
+        border-top: 1px solid $border_color;
+        padding: 6px;
+        text-align: center;
+        background-color: $base_color;
+        cursor: pointer;
+        .fa-solid{
+            font-size: 0.8rem
+        }
+        & + & {
+            border-left: 1px solid $border_color;
+        }
+    }
+
+    .hover-icons{
+        width: 259px;
+        transition: 0.3s ease;
+        position: absolute;
+        bottom: 0;
+        transform: translatey(100%);
+        left: 0;
+        .content-wrapper:hover & {
+            transform: translateY(0);
+        }
+    }
+
+    .liked{
+        color: red
     }
 </style>

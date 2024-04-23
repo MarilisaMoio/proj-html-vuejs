@@ -1,13 +1,13 @@
 <script>
+    import { store } from "../store.js";
+
     export default{
         name: 'AppHeader',
         data() {
             return {
-                wishlist: 0,
+                store,
                 navItems: ["Home", "Shop", "Blog", "Media", "ShortCorde", "Features"],
                 isNavActive: 0,
-                inCart: 0,
-                totalPrice: 0,
             }
         },
         methods: {
@@ -24,7 +24,7 @@
         <section class="top-header">
             <div class="container">
                 <ul>
-                    <li>Wishlist({{ wishlist }})</li>
+                    <li>Wishlist({{ store.wishlist }})</li>
                     <li>Need Help? <i class="fa-solid fa-angle-up"></i></li>
                 </ul>
                 <div>
@@ -41,7 +41,7 @@
                 <ul class="icons">
                     <li><div class="icon icon1"></div></li>
                     <li><div class="icon icon2"></div></li>
-                    <li class="cart"><div class="icon icon3"></div><span>({{ inCart }}) &euro;{{ totalPrice }}</span></li>
+                    <li class="cart"><div class="icon icon3"></div><span>({{ store.inCart }}) &euro;{{ store.totalPrice }}</span></li>
                 </ul>
             </div>
         </section>
