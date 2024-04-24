@@ -17,7 +17,7 @@
                     },
                     {
                         reference: "Blog",
-                        links: null,
+                        links: ["Latest News", "News on games", "News on consoles", "News on famous players"],
                     },
                     {
                         reference: "Media",
@@ -87,11 +87,14 @@
 
     header{
         background-color: $base_color;
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 999;
         .top-header{
             color: $sub_text;
             border-bottom: 0.5px solid $border_color;
             .container{
-                display: flex;
                 justify-content: space-between;
                 padding: 12px;
                 ul{
@@ -207,6 +210,10 @@
                 margin-top: 10px
             }
         }
+    }
+
+    .container, ul:not(.menu-content > ul){
+        display: flex
     }
 
 </style>
