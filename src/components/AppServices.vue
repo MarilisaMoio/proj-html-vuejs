@@ -76,40 +76,40 @@
 
     .icon1{
         background-position: 0px -109px;
-        &:hover{
+        .card-services:hover > &{
             background-position: 0px 4px;
         }
-        &:hover ~ div > .card-text{
+        .card-services:hover > & ~ div > .card-text{
             color: $primary_color;
         }
     }
 
     .icon2{
         background-position: 0px -335px;
-        &:hover{
+        .card-services:hover > &{
             background-position: 0px -222px;
         }
-        &:hover ~ div > .card-text{
+        .card-services:hover > & ~ div > .card-text{
             color: $primary_color;
         }
     }
 
     .icon3{
         background-position: 0px -562px;
-        &:hover{
+        .card-services:hover > &{
             background-position: 0px -449px;
         }
-        &:hover ~ div > .card-text{
+        .card-services:hover > & ~ div > .card-text{
             color: $primary_color;
         }
     }
 
     .icon4{
         background-position: 0px -788px;
-        &:hover{
+        .card-services:hover > &{
             background-position: 0px -675px;
         }
-        &:hover ~ div > .card-text{
+        .card-services:hover > & ~ div > .card-text{
             color: $primary_color;
         }
     }
