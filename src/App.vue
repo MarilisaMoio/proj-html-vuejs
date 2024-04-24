@@ -10,6 +10,7 @@
     import AppQuotes from "./components/AppQuotes.vue"
     import AppBlog from "./components/AppBlog.vue"
     import AppPartners from "./components/AppPartners.vue"
+    import AppFooter from "./components/AppFooter.vue"
 
     export default{
         components: {
@@ -22,7 +23,8 @@
             AppSpecial,
             AppQuotes,
             AppBlog,
-            AppPartners
+            AppPartners,
+            AppFooter
         },
         data(){
             return {
@@ -45,6 +47,7 @@
         <AppQuotes></AppQuotes>
         <AppBlog></AppBlog>
         <AppPartners></AppPartners>
+        <AppFooter></AppFooter>
     </main>
 </template>
 
