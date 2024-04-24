@@ -7,7 +7,6 @@
 <template>
     <section class="services">
         <div class="container">
-            <!-- ! RITAGLIA LE ICON -->
             <div class="card-services">
                 <div class="icon icon1"></div>
                 <div class="text-wrapper">

@@ -1,8 +1,12 @@
 <script>
     import { store } from "../store.js";
+    import CartOrLiked from "./CartOrLiked.vue"
 
     export default{
         name: 'AppHeader',
+        components: {
+            CartOrLiked
+        },
         data() {
             return {
                 store,
@@ -49,7 +53,12 @@
         <section class="top-header">
             <div class="container">
                 <ul>
-                    <li>Wishlist({{ store.wishlist }})</li>
+                    <li class="wishlist">
+                        Wishlist({{ store.wishlist.length }})
+                        <div class="wishlist-content">
+                            <CartOrLiked v-for="item, index in store.wishlist" :CardOrLiked="'wishlist'" :item="item" :index="index"></CartOrLiked>
+                        </div>
+                    </li>
                     <li>Need Help? <i class="fa-solid fa-angle-up"></i></li>
                 </ul>
                 <div>
@@ -75,7 +84,13 @@
                 <ul class="icons">
                     <li><div class="icon icon1"></div></li>
                     <li><div class="icon icon2"></div></li>
-                    <li class="cart"><div class="icon icon3"></div><span>({{ store.inCart }}) &euro;{{ store.totalPrice }}</span></li>
+                    <li class="cart">
+                        <div class="icon icon3"></div>
+                        <span>({{ store.inCart.length }}) &euro;{{ store.totalPrice }}</span>
+                        <div class="cart-content">
+                            <CartOrLiked v-for="item, index in store.inCart" :CardOrLiked="'cart'" :item="item" :index="index"></CartOrLiked>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </section>
@@ -172,6 +187,7 @@
 
     .cart{
         display: flex;
+        position: relative;
         align-items: center;
         > * {
             display: inline-block;
@@ -180,6 +196,9 @@
         }
         span{
             color: $primary_color
+        }
+        &:hover .cart-content{
+            display: block;
         }
     }
 
@@ -216,4 +235,30 @@
         display: flex
     }
 
+    .cart-content{
+        position: absolute;
+        display: none;
+        bottom: 0;
+        transform: translateY(100%);
+        right: 0px;
+        background-color: $base_color;
+        border: 1px solid color-mix(in hsl, $base_color 70%, white 30%);
+    }
+
+    .wishlist{
+        position: relative;
+        &:hover > .wishlist-content{
+            display: block
+        }
+    }
+
+    .wishlist-content{
+        position: absolute;
+        display: none;
+        bottom: 0;
+        transform: translateY(100%);
+        left: 0px;
+        background-color: $base_color;
+        border: 1px solid color-mix(in hsl, $base_color 70%, white 30%);
+    }
 </style>

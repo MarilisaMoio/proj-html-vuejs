@@ -16,17 +16,20 @@
                 return new URL(`../assets/img/${name}`, import.meta.url).href
             },
             likeBtn(){
-                this.isLiked = !this.isLiked;
-                this.isLiked ? store.wishlist += 1 : store.wishlist -= 1;
-                
+                if(!store.wishlist.includes(this.item)){
+                    store.wishlist.push(this.item)
+                } else {
+                    const index = store.wishlist.indexOf(this.item)
+                    store.wishlist.splice(index, 1)
+                } 
             },
             cartBtn(){
-                this.isInCart = !this.isInCart
-                if (this.isInCart === true){
-                    store.inCart += 1;
+                if(!store.inCart.includes(this.item)){
+                    store.inCart.push(this.item)
                     this.item.discounted ? store.totalPrice += Math.round(this.item.price / 100 * (100 - this.item.discounted)) : store.totalPrice += this.item.price;
                 } else {
-                    store.inCart -= 1;
+                    const index = store.inCart.indexOf(this.item)
+                    store.inCart.splice(index, 1)
                     this.item.discounted ? store.totalPrice -= Math.round(this.item.price / 100 * (100 - this.item.discounted)) : store.totalPrice -= this.item.price;
                 }
             }
@@ -53,7 +56,7 @@
                     <i class="fa-solid fa-bag-shopping"></i>
                 </div>
                 <div class="icon-border" @click="likeBtn()">
-                    <i class="fa-solid fa-heart" :class="{ liked: isLiked }"></i>
+                    <i class="fa-solid fa-heart" :class="{ liked: store.wishlist.includes(item) }"></i>
                 </div>
                 <div class="icon-border">
                     <i class="fa-solid fa-maximize"></i>
