@@ -184,7 +184,6 @@
         }
     }
 
-
     .circuit{
         background-image: url(../assets/img/payments.png);
         width: 42px;

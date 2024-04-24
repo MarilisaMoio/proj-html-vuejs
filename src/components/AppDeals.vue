@@ -25,7 +25,6 @@
                         this.itemPrinted.push(item)
                     }
                 })
-                console.log(this.itemPrinted)
             },
             minutesPassing(){
                 setInterval(() => {

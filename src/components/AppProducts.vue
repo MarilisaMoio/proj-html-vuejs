@@ -16,14 +16,12 @@
         },
         methods: {
             shownItems(){
-                console.log("ehi!")
                 this.itemPrinted = [];
                 store.items.forEach((item) => {
                     if (item.status === this.isActive){
                         this.itemPrinted.push(item)
                     }
                 })
-                console.log(this.itemPrinted)
             }
         },
         mounted(){
