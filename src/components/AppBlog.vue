@@ -39,7 +39,13 @@
             <h3 class="sec-title">New Game Blogs</h3>
             <div class="blog-wrapper">
                 <article v-for="article in articles">
-                    <img :src="getImageUrl(article.img)" alt="article img">
+                    <div class="img-wrapper">
+                        <img :src="getImageUrl(article.img)" alt="article img">
+                        <div class="overlay">
+                            <button type="button"><i class="fa-solid fa-link"></i></button>
+                            <button type="button"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
                     <div clas="article-info">
                         <span class="date"><i class="fa-solid fa-calendar-days"></i> {{ article.date }}</span>
                         <span class="comments"><i class="fa-solid fa-comments"></i> {{ article.comments }} comments</span>
@@ -85,5 +91,42 @@
                 }
             }
         }
+    }
+
+    .img-wrapper{
+        position: relative;
+        .overlay{
+            filter: opacity(0%);
+            transition: 0.3s;
+            background-color: rgba(0, 0, 0, 0.4);
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            button{
+                width: 40px;
+                background-color: transparent;
+                color: $main_text;
+                aspect-ratio: 1;
+                padding: 8px;
+                border: 1px solid $main_text;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: 0.2s;
+                &:hover{
+                    background-color: color-mix(in srgb, $main_text 35%, rgba(255, 255, 255, 0) 65%);
+                }
+            }
+        }
+    }
+
+    article:hover .overlay {
+        filter: opacity(100%);
     }
 </style>
