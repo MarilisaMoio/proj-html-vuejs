@@ -65,6 +65,14 @@
                 </div>
             </div>
         </section>
+        <section class="footer-bottom">
+            <div class="container">
+                <div class="copyright">Coopyright &copy; 2024 Boolean 122</div>
+                <div class="payments">
+                    <div v-for="n in 5" :class="'circuit circuit' + n"></div>
+                </div>
+            </div>
+        </section>
     </footer>
 </template>
 
@@ -159,4 +167,48 @@
             background-position: calc(100% - 5px) calc(100% - 5px);
         }
     }
+
+    .footer-bottom{
+        border-top: 1px solid $border_color;
+        .container{
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            .payments{
+                display: flex;
+            }
+            .copyright{
+                color: $sub_text;
+                font-size: 0.9rem;
+            }
+        }
+    }
+
+
+    .circuit{
+        background-image: url(../assets/img/payments.png);
+        width: 42px;
+        height: 25px;
+        overflow: hidden;
+        background-size: 110%;
+        & + & {
+            margin-left: 10px;
+        }
+        &.circuit1{
+            background-position: center -2px;
+        }
+        &.circuit2{
+            background-position: center -45px;
+        }
+        &.circuit3{
+            background-position: center -86px;
+        }
+        &.circuit4{
+            background-position: center -130px;
+        }
+        &.circuit5{
+            background-position: center -263px;
+        }
+    }
+
 </style>
