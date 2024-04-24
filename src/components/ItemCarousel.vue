@@ -15,7 +15,6 @@
         methods: {
             moveFoward(){
                 if (this.itemPrinted.length > store.lastVisible){
-                    console.log("ehiii")
                     ++store.lastVisible;
                     store.movement += -285
                 } else {
