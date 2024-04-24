@@ -9,6 +9,7 @@
     import AppSpecial from "./components/AppSpecial.vue"
     import AppQuotes from "./components/AppQuotes.vue"
     import AppBlog from "./components/AppBlog.vue"
+    import AppPartners from "./components/AppPartners.vue"
 
     export default{
         components: {
@@ -20,7 +21,8 @@
             AppDeals,
             AppSpecial,
             AppQuotes,
-            AppBlog
+            AppBlog,
+            AppPartners
         },
         data(){
             return {
@@ -42,6 +44,7 @@
         <AppDeals></AppDeals>
         <AppQuotes></AppQuotes>
         <AppBlog></AppBlog>
+        <AppPartners></AppPartners>
     </main>
 </template>
 
