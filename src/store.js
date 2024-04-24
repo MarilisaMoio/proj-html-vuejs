@@ -2,9 +2,9 @@ import { reactive } from "vue";
 
 export const store = reactive({
     //header counters
-    inCart: 0,
+    inCart: [],
     totalPrice: 0,
-    wishlist: 0,
+    wishlist: [],
     //object arrays
     banners: [
         {
