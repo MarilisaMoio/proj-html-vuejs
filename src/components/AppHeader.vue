@@ -6,7 +6,32 @@
         data() {
             return {
                 store,
-                navItems: ["Home", "Shop", "Blog", "Media", "ShortCorde", "Features"],
+                navItems: [
+                    {
+                        reference: "Home",
+                        links: null,
+                    },
+                    {
+                        reference: "Shop",
+                        links: ["Shop for PC", "Shop for PS4/PS5", "Shop for xBox"],
+                    },
+                    {
+                        reference: "Blog",
+                        links: null,
+                    },
+                    {
+                        reference: "Media",
+                        links: ["Images", "Videos"],
+                    },
+                    {
+                        reference: "ShortCode",
+                        links: null,
+                    },
+                    {
+                        reference: "Features",
+                        links: null,
+                    },
+                ],
                 isNavActive: 0,
             }
         },
@@ -36,7 +61,16 @@
             <div class="container">
                 <img src="../assets/img/logo.png" alt="">
                 <ul class="items">
-                    <li v-for="item, index in navItems"><a :href="'#' + item" :class="{ 'active': isNavActive === index }" @click="thisIsActive(index)" >{{ item }}</a></li>
+                    <li v-for="item, index in navItems">
+                        <a :href="'#' + item.reference" :class="{ 'active': isNavActive === index }" @click="thisIsActive(index)" >{{ item.reference }}</a>
+                        <div class="menu-content" v-if="item.links">
+                            <ul>
+                                <li v-for="link in item.links">
+                                    <a href="#">{{ link }}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
                 <ul class="icons">
                     <li><div class="icon icon1"></div></li>
@@ -57,6 +91,7 @@
             color: $sub_text;
             border-bottom: 0.5px solid $border_color;
             .container{
+                display: flex;
                 justify-content: space-between;
                 padding: 12px;
                 ul{
@@ -81,6 +116,7 @@
                 padding: 16px;
                 justify-content: space-between;
                 ul.items{
+                    display: flex;
                     > * + * {
                     padding-left: 20px;
                     }
@@ -91,6 +127,7 @@
                     }
                 }
                 ul.icons{
+                    display: flex;
                     > * {
                         font-size: 1.2rem;
                         padding: 0 8px;
@@ -143,8 +180,33 @@
         }
     }
 
-    ul, .container{
+    .container{
         display: flex;
+    }
+
+    li{
+        position: relative;
+        &:hover {
+            color: $primary_color;
+        }
+        &:hover > .menu-content{
+            display: block;
+        }
+        .menu-content{
+            color: $sub_text;
+            width: max-content;
+            padding: 10px;
+            display: none;
+            position: absolute;
+            bottom: 0;
+            transform: translateY(100%);
+            left: 10px;
+            background-color: $base_color;
+            border: 1px solid color-mix(in hsl, $base_color 70%, white 30%);
+            li + li {
+                margin-top: 10px
+            }
+        }
     }
 
 </style>
