@@ -35,6 +35,7 @@
 </script>
 
 <template>
+    <button class="scroll-up"><a href="#"><i class="fa-solid fa-angles-left"></i></a></button>
     <AppHeader></AppHeader>
     <main>
         <AppHero></AppHero>
@@ -53,9 +54,38 @@
 
 <style lang="scss">
     @use './style/general' as *;
+    @use './style/partials/variables' as *;
 
     main{
         background-image: url(./assets/img/body-bg.jpg);
         background-size: cover;
+    }
+
+    .scroll-up{
+        position: fixed;
+        bottom: 30px;
+        right: 8vw;
+        background-color: $primary_color;
+        z-index: 999;
+        width: 40px;
+        padding: 3px;
+        aspect-ratio: 1;
+        transform: rotate(45deg);
+        opacity: 40%;
+        &:hover{
+            opacity: 100%;
+        }
+        > a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            aspect-ratio: 1;
+            border: 2px solid black;
+
+        }
+        i{
+            transform: rotate(45deg);
+        }
     }
 </style>
