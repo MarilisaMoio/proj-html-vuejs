@@ -28,7 +28,60 @@
         },
         data(){
             return {
-                store
+                store,
+                navItems: [
+                    {
+                        reference: "Home",
+                        links: null,
+                    },
+                    {
+                        reference: "Shop",
+                        links: ["Shop for PC", "Shop for PS4/PS5", "Shop for xBox"],
+                    },
+                    {
+                        reference: "Blog",
+                        links: ["Latest News", "News on games", "News on consoles", "News on famous players"],
+                    },
+                    {
+                        reference: "Media",
+                        links: ["Images", "Videos"],
+                    },
+                    {
+                        reference: "ShortCode",
+                        links: null,
+                    },
+                    {
+                        reference: "Features",
+                        links: null,
+                    },
+                ],
+                footerLists: [
+                {
+                    title: "Address info",
+                    content: [
+                        {
+                            icon: "location-dot",
+                            text: "60 29th street San Francisco, CA 94110 507-Union Trade Center, United States Of America"
+                        },
+                        {
+                            icon: "phone",
+                            text: "(+00) 123-456-789"
+                        },
+                        {
+                            icon: "envelope",
+                            text: "info@gamehoak.com"
+                        },
+                    ]
+                },
+                {
+                    title: "Address info",
+                    links: ["Bookmark", "Features", "Sitemap", "Lists", "Contact Us"]
+                },
+                {
+                    title: "Extras",
+                    links: ["Delivery", "Cart", "Terms Conditions", "My Account", "AboutUs"]
+                }
+            ],
             }
         }
     }
@@ -36,7 +89,7 @@
 
 <template>
     <button class="scroll-up"><a href="#"><i class="fa-solid fa-angles-left"></i></a></button>
-    <AppHeader></AppHeader>
+    <AppHeader :navItems="navItems"></AppHeader>
     <main>
         <AppHero></AppHero>
         <AppServices></AppServices>
@@ -48,7 +101,7 @@
         <AppQuotes></AppQuotes>
         <AppBlog></AppBlog>
         <AppPartners></AppPartners>
-        <AppFooter></AppFooter>
+        <AppFooter :lists="footerLists"></AppFooter>
     </main>
 </template>
 

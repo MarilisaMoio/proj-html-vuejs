@@ -1,36 +1,10 @@
 <script>
     export default{
         name: 'AppFooter',
+        props: ["lists"],
         data(){
             return{
-                lists: [
-                {
-                    title: "Address info",
-                    content: [
-                        {
-                            icon: "location-dot",
-                            text: "60 29th street San Francisco, CA 94110 507-Union Trade Center, United States Of America"
-                        },
-                        {
-                            icon: "phone",
-                            text: "(+00) 123-456-789"
-                        },
-                        {
-                            icon: "envelope",
-                            text: "info@gamehoak.com"
-                        },
-                    ]
-                },
-                {
-                    title: "Address info",
-                    links: ["Bookmark", "Features", "Sitemap", "Lists", "Contact Us"]
-                },
-                {
-                    title: "Extras",
-                    links: ["Delivery", "Cart", "Terms Conditions", "My Account", "AboutUs"]
-                }
-            ],
-            socials: [ "facebook-f", "twitter", "google-plus-g", "skype", "instagram"]
+                socials: [ "facebook-f", "twitter", "google-plus-g", "skype", "instagram"]
             }
         }
     }

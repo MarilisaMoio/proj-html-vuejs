@@ -4,38 +4,13 @@
 
     export default{
         name: 'AppHeader',
+        props: ["navItems"],
         components: {
             CartOrLiked
         },
         data() {
             return {
                 store,
-                navItems: [
-                    {
-                        reference: "Home",
-                        links: null,
-                    },
-                    {
-                        reference: "Shop",
-                        links: ["Shop for PC", "Shop for PS4/PS5", "Shop for xBox"],
-                    },
-                    {
-                        reference: "Blog",
-                        links: ["Latest News", "News on games", "News on consoles", "News on famous players"],
-                    },
-                    {
-                        reference: "Media",
-                        links: ["Images", "Videos"],
-                    },
-                    {
-                        reference: "ShortCode",
-                        links: null,
-                    },
-                    {
-                        reference: "Features",
-                        links: null,
-                    },
-                ],
                 isNavActive: 0,
             }
         },
